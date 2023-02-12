@@ -44,10 +44,10 @@ class _IndexState extends State<Index> {
     print("index page ${currentPage}");
     titleCheck();
     isHome = true;
-     isArbeitszeit = false;
-     isBesuche = false;
-     isMehr = false;
-    print(isArbeitszeit);
+    isArbeitszeit = false;
+    isBesuche = false;
+    isMehr = false;
+    print("isArbeitszeit ${isArbeitszeit}");
   }
 
   bool isHome = false;
@@ -55,51 +55,49 @@ class _IndexState extends State<Index> {
   bool isBesuche = false;
   bool isMehr = false;
 
-  void titleCheck(){
-    if(currentPage == 0){
+  void titleCheck() {
+    if (currentPage == 0) {
       setState(() {
         isHome = true;
       });
-    }else{
+    } else {
       setState(() {
         isHome = false;
       });
     }
 
     ///isArbeitszeit check
-    if(currentPage == 1){
+    if (currentPage == 1) {
       setState(() {
         isArbeitszeit = true;
       });
-    }else{
+    } else {
       setState(() {
         isArbeitszeit = false;
       });
     }
 
     ///isBesuche check
-    if(currentPage == 2){
+    if (currentPage == 2) {
       setState(() {
         isBesuche = true;
       });
-    }else{
+    } else {
       setState(() {
         isBesuche = false;
       });
     }
 
     ///isBesuche check
-    if(currentPage == 3){
+    if (currentPage == 3) {
       setState(() {
         isMehr = true;
       });
-    }else{
+    } else {
       setState(() {
         isMehr = false;
       });
     }
-
-
 
     print(isHome);
   }
@@ -115,7 +113,7 @@ class _IndexState extends State<Index> {
         buttonBackgroundColor: appColors.mainColor,
         items: <Widget>[
           Container(
-            margin: isHome ? EdgeInsets.only(top: 0): EdgeInsets.only(top: 20),
+            margin: isHome ? EdgeInsets.only(top: 0) : EdgeInsets.only(top: 20),
             child: Column(
               children: [
                 Icon(
@@ -128,7 +126,9 @@ class _IndexState extends State<Index> {
             ),
           ),
           Container(
-            margin: isArbeitszeit ? EdgeInsets.only(top: 0): EdgeInsets.only(top: 20),
+            margin: isArbeitszeit
+                ? EdgeInsets.only(top: 0)
+                : EdgeInsets.only(top: 20),
             child: Column(
               children: [
                 Icon(
@@ -136,12 +136,15 @@ class _IndexState extends State<Index> {
                   size: 30,
                   color: appColors.white,
                 ),
-                isArbeitszeit ? SizedBox.shrink() : buildBottomMenuText("Arbeitszeit"),
+                isArbeitszeit
+                    ? SizedBox.shrink()
+                    : buildBottomMenuText("Arbeitszeit"),
               ],
             ),
           ),
           Container(
-            margin: isBesuche ? EdgeInsets.only(top: 0): EdgeInsets.only(top: 20),
+            margin:
+                isBesuche ? EdgeInsets.only(top: 0) : EdgeInsets.only(top: 20),
             child: Column(
               children: [
                 Icon(
@@ -154,7 +157,7 @@ class _IndexState extends State<Index> {
             ),
           ),
           Container(
-            margin: isMehr ? EdgeInsets.only(top: 0): EdgeInsets.only(top: 20),
+            margin: isMehr ? EdgeInsets.only(top: 0) : EdgeInsets.only(top: 20),
             child: Column(
               children: [
                 Icon(
@@ -166,7 +169,6 @@ class _IndexState extends State<Index> {
               ],
             ),
           ),
-
         ],
         onTap: (index) {
           setState(() {
@@ -180,11 +182,9 @@ class _IndexState extends State<Index> {
   }
 
   Text buildBottomMenuText(title) {
-    return Text("$title",
-                style: TextStyle(
-                  fontWeight: FontWeight.w600,
-                  color: appColors.white
-                ),
-              );
+    return Text(
+      "$title",
+      style: TextStyle(fontWeight: FontWeight.w600, color: appColors.white),
+    );
   }
 }
