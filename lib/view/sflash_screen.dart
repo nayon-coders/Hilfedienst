@@ -18,8 +18,12 @@ class _SflashScreenState extends State<SflashScreen> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    Future.delayed(Duration(milliseconds: 3000)).then((value) => Get.to(Login(), transition: Transition.zoom, duration: Duration(milliseconds: 1500)));
+    Future.delayed(Duration(milliseconds: 2000)).then((value) => Get.to(
+          Login(),
+          transition: Transition.zoom,
+        ));
   }
+
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
@@ -34,34 +38,28 @@ class _SflashScreenState extends State<SflashScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-
-            Image.asset("assets/icons/flash.png", height: 100, width: 100,),
-            SizedBox(height: 20,),
-            Container(
-              width: size.width,
-              height: 100,
+            Image.asset(
+              "assets/icons/falshicon.png",
+              height: 80,
+              width: 100,
+            ),
+            Center(
               child: DefaultTextStyle(
                 style: const TextStyle(
-                  fontSize: 40.0,
-                  fontFamily: 'Horizon',
-                ),
+                    fontSize: 30.0,
+                    fontFamily: 'Bobbers',
+                    fontWeight: FontWeight.bold),
                 child: AnimatedTextKit(
-
-                  pause: Duration(seconds: 3),
-                  onFinished: (){
-                    print("object");
-                  },
-                  //isRepeatingAnimation: false,
                   animatedTexts: [
-                    RotateAnimatedText(" ${AppConfig.appName} "),
+                    TyperAnimatedText('Hilfedienst'),
                   ],
+                  totalRepeatCount: 1,
                   onTap: () {
                     print("Tap Event");
                   },
                 ),
               ),
-            ),
-
+            )
           ],
         ),
       ),

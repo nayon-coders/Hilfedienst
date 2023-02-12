@@ -36,7 +36,22 @@ dependencies:
   cupertino_icons: ^1.0.2
   sizer: ^2.0.15
   get: ^4.6.5
+  http:
   animated_text_kit: ^4.2.2
+  curved_navigation_bar: ^1.0.3
+  stop_watch_timer: ^2.0.0
+  dotted_border: ^2.0.0+3
+  filter_list: ^1.0.2
+  month_picker_dialog_2: ^0.5.8
+  image_picker: ^0.8.6
+  syncfusion_flutter_signaturepad: ^20.3.59
+  font_awesome_flutter: ^10.2.1
+  tab_indicator_styler: ^2.0.0
+  dropdown_search: ^5.0.3
+  rename: ^2.0.1
+  shared_preferences: ^2.0.16
+  url_launcher: ^6.1.7
+  flutter_spinkit: ^5.1.0
 
 dev_dependencies:
   flutter_test:
@@ -63,6 +78,7 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/icons/
+    - assets/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
@@ -76,10 +92,11 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  # fonts:
-  #   - family: Schyler
-  #     fonts:
-  #       - asset: fonts/Schyler-Regular.ttf
+  fonts:
+    - family: Roboto
+      fonts:
+        - asset: assets/fonts/Roboto-Medium.ttf
+        - asset: assets/fonts/Roboto-Regular.ttf
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro
